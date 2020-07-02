@@ -2,6 +2,8 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand href="/">u-tube</b-navbar-brand>
+        <!-- <b-link class="navbar-brand" to="">u-tube</b-link> -->
+   
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -39,11 +41,13 @@
             <b-dropdown-item href="#">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
-          <div v-else right>
-            <li class="nav-item"> <b-link class="nav-link" to="login">Login</b-link></li>
-           
-            <!-- <b-nav-item href="/login">Login</b-nav-item> -->
-          </div>
+          <!-- <div v-else right> -->
+            <!-- <li class="nav-item">
+              <nuxt-link class="nav-link" to="login">Login</nuxt-link>
+            </li> -->
+
+            <b-nav-item href="/login" v-else right>Login</b-nav-item>
+          <!-- </div> -->
           <!-- <b-nav-item-dropdown v-else right> -->
 
           <!-- Using 'button-content' slot -->
