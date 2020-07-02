@@ -92,4 +92,4 @@ sw.*
 my-notes.md
 
 # don't check in right now
-nuxt.config.js
+# nuxt.config.js
