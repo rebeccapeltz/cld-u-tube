@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="/">u-tube</b-navbar-brand>
+      <b-navbar-brand href="/">cloudy u-tube</b-navbar-brand>
         <!-- <b-link class="navbar-brand" to="">u-tube</b-link> -->
    
 
