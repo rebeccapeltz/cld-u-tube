@@ -33,7 +33,7 @@
           <b-dropdown-item href="#">FA</b-dropdown-item>
         </b-nav-item-dropdown> -->
 
-          <b-nav-item-dropdown v-if="$auth.loggedin" right>
+          <b-nav-item-dropdown v-if="this.$auth.loggedin" right>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
               <em>User</em>
