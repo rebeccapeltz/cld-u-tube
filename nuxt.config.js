@@ -1,12 +1,4 @@
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
-// const routerBase =
-//   process.env.DEPLOY_ENV === "GH_PAGES"
-//     ? {
-//         router: {
-//           base: "/cld-u-tube/"
-//         }
-//       }
-//     : {};
+require('dotenv').config();
 
 export default {
   /*
@@ -65,8 +57,13 @@ export default {
     "@nuxtjs/auth"
   ],
   auth: {
+    redirect: {
+      callback: '/callback',
+      logout: '/logout'
+    },
     // Options
     stratgeies: {
+      local: false,
       github: {
         clientId: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET
@@ -79,10 +76,5 @@ export default {
    */
   build: {},
   middleware: 'auth',
-
-  env: {
-    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID || "",
-    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET || ""
-  },
   // ...routerBase
 };

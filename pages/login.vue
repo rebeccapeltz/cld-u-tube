@@ -3,7 +3,7 @@
     <h1>Login</h1>
     <h2>With GitHub</h2>
     <form id="login-form" v-on:submit.prevent="submitForm">
-      <b-row class="my-1">
+      <!-- <b-row class="my-1">
         <b-col sm="3">
           <label for="username">User name:</label>
         </b-col>
@@ -26,11 +26,11 @@
             v-model="userInfo.password"
           ></b-form-input>
         </b-col>
-      </b-row>
+      </b-row> -->
       <b-row class="my-1">
         <b-col sm="3"> </b-col>
         <b-col sm="9">
-          <b-button type="submit">Login</b-button>
+          <b-button type="submit">Login with GitHub</b-button>
         </b-col>
       </b-row>
     </form>
@@ -44,9 +44,15 @@ export default {
       errors: [],
       userInfo: {
         username: "",
-        password: ""
+        password: "!"
       }
     };
+  },
+  mounted: function() {
+    debugger;
+    this.$nextTick(function() {
+      console.log("callback");
+    });
   },
   methods: {
     valid: function() {
@@ -58,11 +64,16 @@ export default {
     submitForm: function() {
       debugger;
 
-      alert(JSON.stringify(this.userInfo, null, 2));
-      if (this.valid()) {
+      console.log(JSON.stringify(this.userInfo, null, 2));
+      // if (this.valid()) {
         debugger;
-        this.$auth.loginWith("github", { data: this.userInfo });
-      }
+        try {
+          this.$auth.loginWith("github");
+                  // this.$auth.loginWith("github", { data: this.userInfo });
+        } catch (error){
+          console.log("caught error", error)
+        }
+      // }
 
       //TODO what to do with user data?
     }

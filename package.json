@@ -9,8 +9,6 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt build --target static && nuxt export",
-    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build --target static && nuxt export",
     "deploy": "npx push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
@@ -18,6 +16,7 @@
     "@nuxtjs/axios": "^5.11.0",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
+    "dotenv": "^8.2.0",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
